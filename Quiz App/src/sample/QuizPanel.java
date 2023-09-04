@@ -78,6 +78,8 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
     d.addActionListener(this::AnswerD);
 
     frame.getContentPane().setBackground(Color.gray);
+
+
 //    frame.addMouseMotionListener(this);
     }
 
@@ -86,6 +88,7 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
         return (int) ((Math.random() * (max - min)) + min);
     }
 
+	
 
     public void GetQuestion(int number){
 
@@ -473,9 +476,7 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
             JFrame innerFrame=new JFrame();
             JOptionPane.showMessageDialog(innerFrame, "You have "+  rightAnswers +" out of "+usedQuestionsCount+" right answers!");
 
-            rightAnswers = 0;
-            usedQuestionsCount = 0;
-            Arrays.fill(usedQuestions, 0);
+
 
             testFinished=true;
             frame.dispose();
@@ -509,9 +510,6 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
         if(usedQuestionsCount>=15){
             JFrame innerFrame=new JFrame();
             JOptionPane.showMessageDialog(innerFrame, "You have "+  rightAnswers +" out of "+usedQuestionsCount+" right answers!");
-            rightAnswers = 0;
-            usedQuestionsCount = 0;
-            Arrays.fill(usedQuestions, 0);
 
             testFinished=true;
             frame.dispose();
@@ -545,10 +543,7 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
         if(usedQuestionsCount>=15){
             JFrame innerFrame=new JFrame();
             JOptionPane.showMessageDialog(innerFrame, "You have "+  rightAnswers +" out of "+usedQuestionsCount+" right answers!");
-            rightAnswers = 0;
-            usedQuestionsCount = 0;
 
-            Arrays.fill(usedQuestions, 0);
 
             testFinished=true;
             frame.dispose();
@@ -586,10 +581,6 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
         if(usedQuestionsCount>=15){
             JFrame innerFrame=new JFrame();
             JOptionPane.showMessageDialog(innerFrame, "You have "+  rightAnswers +" out of "+usedQuestionsCount+" right answers!");
-            rightAnswers = 0;
-            usedQuestionsCount = 0;
-
-            Arrays.fill(usedQuestions, 0);
 
             testFinished=true;
             frame.dispose();
@@ -617,6 +608,9 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        rightAnswers = 0;
+        usedQuestionsCount = 0;
+        Arrays.fill(usedQuestions, 0);
 
         //Question chosen
         int question=getRandomNumber(1,35);
