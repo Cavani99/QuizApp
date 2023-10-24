@@ -4,11 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
 import java.util.Arrays;
 
-public class QuizPanel extends JPanel implements ActionListener, MouseMotionListener {
+public class QuizPanel extends JPanel implements ActionListener {
 
 
         final JFrame frame = new JFrame("warning message");
@@ -58,8 +56,7 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
     b.setPreferredSize(new Dimension(100, 40));
     c.setPreferredSize(new Dimension(100, 40));
     d.setPreferredSize(new Dimension(100, 40));
-//    mouseMovementMessage.setPreferredSize(new Dimension(100,80));
-//    mouseMovementMessage.setEditable(false);
+
 
     p.add(a);
     p.add(b);
@@ -70,7 +67,7 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
     frame.add(Question,BorderLayout.CENTER);
     frame.add(numberOfQuestion,BorderLayout.NORTH);
 
-//    frame.add(mouseMovementMessage,BorderLayout.EAST);
+
 
     a.addActionListener(this::AnswerA);
     b.addActionListener(this::AnswerB);
@@ -80,7 +77,6 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
     frame.getContentPane().setBackground(Color.gray);
 
 
-//    frame.addMouseMotionListener(this);
     }
 
     public int getRandomNumber(int min, int max) {
@@ -624,23 +620,5 @@ public class QuizPanel extends JPanel implements ActionListener, MouseMotionList
 
     }
 
-    @Override
-    public void mouseDragged(MouseEvent e) {
 
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
-            saySomething(e);
-    }
-
-
-    void saySomething( MouseEvent e) {
-
-//        mouseMovementMessage.setText( e.getX() +" , "+e.getY()+" zone!\n"
-//                +  e.getComponent().getClass().getName() +"\n");
-
-
-        
-    }
 }

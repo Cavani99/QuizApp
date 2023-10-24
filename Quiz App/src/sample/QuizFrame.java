@@ -19,7 +19,7 @@ public class QuizFrame extends  JFrame  {
     this.getContentPane().setBackground(blue);
 
     //the Starting frame image
-    String pic = "quiztime.jpg";
+    String pic = "Quiz App/quiztime.jpg";
     ImageIcon image = new ImageIcon(new ImageIcon(pic).getImage().getScaledInstance(700, 600, Image.SCALE_SMOOTH));
     JLabel quizPicture = new JLabel(image);
         quizPicture.setSize(200, 300);
